@@ -10,7 +10,7 @@
 <tbody>
 <tr>
 	<td>PERMISSIONS_NAVITEM</td>
-	<td>//div[contains(@class,'permission-navigation-section')]//span[contains(.,'${key_navItem}')]</td>
+	<td>//div[contains(@class,'lfr-permission-navigation')]//li[contains(@class,'permission-navigation-section')]//a[contains(.,'${key_navItem}')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -85,7 +85,7 @@
 </tr>
 <tr>
 	<td>SITE_ADMIN_CONTENT_DOCUMENTS_AND_MEDIA</td>
-	<td>//div[contains(.,'Content') and contains(@class,'permission-navigation-item-header')]/following-sibling::ul//span[contains(@class,'permission-navigation-item')]/a[contains(.,'Documents and Media')]</td>
+	<td>//li[contains(@class,'permission-navigation-item')]/a[contains(.,'Documents and Media')]</td>
 	<td></td>
 </tr>
 <tr>
