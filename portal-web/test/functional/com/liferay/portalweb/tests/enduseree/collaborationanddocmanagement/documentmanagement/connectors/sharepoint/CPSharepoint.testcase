@@ -204,6 +204,7 @@
 	</command>
 
 	<command name="DeleteDocumentInSubfolder" priority="4">
+		<property name="portal.acceptance" value="abel" />
 		<execute macro="DMRepository#gotoCP">
 			<var name="dmRepositoryName" value="Sharepoint Repository Name" />
 		</execute>
@@ -214,6 +215,7 @@
 
 		<execute macro="DMFolder#viewCP">
 			<var name="dmFolderName" value="DM Folder3 Name" />
+			<var name="sharepointConnect" value="true" />
 		</execute>
 
 		<execute macro="DMNavigator#gotoFolder">
