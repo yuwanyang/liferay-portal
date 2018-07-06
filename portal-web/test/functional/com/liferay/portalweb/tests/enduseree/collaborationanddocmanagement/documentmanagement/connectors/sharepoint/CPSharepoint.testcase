@@ -387,6 +387,7 @@
 	</command>
 
 	<command name="MoveCheckedoutDocumentToFolder" priority="4">
+		<property name="portal.acceptance" value="abel" />
 		<property name="test.name.skip.portal.instance" value="CPSharepoint#MoveCheckedoutDocumentToFolder" />
 
 		<execute macro="Navigator#openURL" />
@@ -407,6 +408,7 @@
 
 		<execute macro="DMFolder#viewCP">
 			<var name="dmFolderName" value="Sharepoint Subfolder" />
+			<var name="sharepointConnect" value="true" />
 		</execute>
 
 		<execute macro="Navigator#openURL" />
