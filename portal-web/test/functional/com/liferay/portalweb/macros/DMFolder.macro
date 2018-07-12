@@ -596,10 +596,13 @@
 		<var name="key_dmFolderName" value="${dmFolderName}" />
 
 		<if>
-			<condition function="IsElementPresent" locator1="Icon#CURRENT_DISPLAY_STYLE_ACTIVE">
-				<var name="key_displayStyle" value="list" />
-			</condition>
+			<or>
+				<condition function="IsElementPresent" locator1="Icon#CURRENT_DISPLAY_STYLE_ACTIVE">
+					<var name="key_displayStyle" value="list" />
+				</condition>
 
+				<equals arg1="${sharepointConnect}" arg2="sharepointConnect" />
+			</or>
 			<then>
 				<execute function="AssertElementPresent" locator1="DocumentsAndMedia#DESCRIPTIVE_LIST_FOLDER_ICON" />
 				<execute function="AssertTextEquals" locator1="DocumentsAndMedia#DESCRIPTIVE_LIST_FOLDER_TITLE" value1="${dmFolderName}" />
