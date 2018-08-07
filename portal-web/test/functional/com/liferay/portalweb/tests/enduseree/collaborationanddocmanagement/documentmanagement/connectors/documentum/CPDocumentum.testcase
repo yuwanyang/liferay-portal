@@ -452,6 +452,7 @@
 	</command>
 
 	<command name="EditDocumentFile" priority="5">
+		<property name="portal.acceptance" value="abel" />
 		<property name="test.name.skip.portal.instance" value="CPDocumentum#EditDocumentFile" />
 
 		<execute macro="DMRepository#gotoCP">
@@ -760,6 +761,7 @@
 	</command>
 
 	<command name="SearchDocumentViaHome" priority="5">
+		<property name="portal.acceptance" value="abel" />
 		<property name="test.name.skip.portal.instance" value="CPDocumentum#SearchDocumentViaHome" />
 
 		<execute macro="DMRepository#gotoCP">
