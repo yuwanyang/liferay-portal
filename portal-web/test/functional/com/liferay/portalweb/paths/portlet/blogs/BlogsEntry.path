@@ -14,6 +14,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>ENTRY_COVER_IMAGE_INLINE</td>
+	<td>//img[contains(@src,'${key_uploadFileNameInline}')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>ENTRY_COVER_IMAGE_SELECT_FILE</td>
 	<td>//div[contains(@class,'image-selector')]//a[contains(.,'Select File')]</td>
 	<td></td>
@@ -86,6 +91,11 @@
 <tr>
 	<td>CONTENT_HTML_ITALICS</td>
 	<td>//div[contains(@class,'content')]//i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONTENT_LINK</td>
+	<td>//div[contains(@class,'content')]//p/a[contains(.,'${key_entryContentLink}')]</td>
 	<td></td>
 </tr>
 <tr>
