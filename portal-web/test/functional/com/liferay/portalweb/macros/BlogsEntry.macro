@@ -53,6 +53,22 @@
 		</execute>
 	</command>
 
+	<command name="addEntryContentLink">
+		<execute function="SelectFieldText" locator1="AlloyEditor#EDITOR">
+			<var name="key_editor" value="content" />
+		</execute>
+
+		<execute function="Click" locator1="AlloyEditor#TEXT_FORMATTING_LINK" />
+
+		<var name="key_externalLink" value="${externalLink}" />
+
+		<execute function="Type" locator1="AlloyEditor#TEXT_FORMATTING_LINK_INPUT" value1="${externalLink}" />
+
+		<execute function="Click" locator1="AlloyEditor#TEXT_FORMATTING_LINK_INPUT_CONFIRM" />
+
+		<execute macro="PortletEntry#publish" />
+	</command>
+
 	<command name="addRelatedAsset">
 		<execute function="AssertClick" locator1="AssetRelatedAssets#RELATED_ASSETS_SELECT" value1="Select" />
 
@@ -614,9 +630,11 @@
 
 	<command name="viewEntry">
 		<var name="key_entryContent" value="${entryContent}" />
+		<var name="key_entryContentLink" value="${entryContentLink}" />
 		<var name="key_entrySubtitle" value="${entrySubtitle}" />
 		<var name="key_entryTitle" value="${entryTitle}" />
 		<var name="key_uploadFileName" value="${uploadFileName}" />
+		<var name="key_uploadFileNameInline" value="${uploadFileNameInline}" />
 
 		<execute function="Pause" locator1="3000" />
 
@@ -633,6 +651,13 @@
 			<isset var="uploadFileName" />
 			<then>
 				<execute function="AssertElementPresent" locator1="BlogsEntry#ENTRY_COVER_IMAGE" />
+			</then>
+		</if>
+
+		<if>
+			<isset var="uploadFileNameInline" />
+			<then>
+				<execute function="AssertElementPresent" locator1="BlogsEntry#ENTRY_COVER_IMAGE_INLINE" />
 			</then>
 		</if>
 
@@ -654,6 +679,13 @@
 			<isset var="entryContentItalics" />
 			<then>
 				<execute function="AssertTextEquals#assertPartialText" locator1="BlogsEntry#CONTENT_HTML_ITALICS" value1="${entryContentItalics}" />
+			</then>
+		</if>
+
+		<if>
+			<isset var="entryContentLink" />
+			<then>
+				<execute function="AssertTextEquals#assertPartialText" locator1="BlogsEntry#CONTENT_LINK" value1="${entryContentLink}" />
 			</then>
 		</if>
 	</command>
