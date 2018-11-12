@@ -89,6 +89,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>EXTERNAL_LINK</td>
+	<td>//div[contains(@class,'content')]//a[contains(.,'${key_entryExternalLink}')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>TAG</td>
 	<td>//div[contains(.,'${key_entryTitle}')]//span/a[contains(.,'${key_tagName}')]</td>
 	<td></td>

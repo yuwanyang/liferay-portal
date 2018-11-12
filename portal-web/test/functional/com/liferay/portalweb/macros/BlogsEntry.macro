@@ -53,6 +53,20 @@
 		</execute>
 	</command>
 
+	<command name="addEntryExternalLink">
+		<execute function="SelectFieldText" locator1="AlloyEditor#EDITOR">
+			<var name="key_editor" value="content" />
+		</execute>
+
+		<execute function="Click" locator1="AlloyEditor#TEXT_FORMATTING_LINK" />
+
+		<var name="externalLink" value="${externalLink}" />
+
+		<execute function="Type" locator1="AlloyEditor#TEXT_FORMATTING_LINK_INPUT" value1="${externalLink}" />
+
+		<execute function="Click" locator1="AlloyEditor#TEXT_FORMATTING_LINK_INPUT_CONFIRM" />
+	</command>
+
 	<command name="addRelatedAsset">
 		<execute function="AssertClick" locator1="AssetRelatedAssets#RELATED_ASSETS_SELECT" value1="Select" />
 
@@ -613,7 +627,9 @@
 	</command>
 
 	<command name="viewEntry">
+		<var name="externalURL" value="${externalURL}" />
 		<var name="key_entryContent" value="${entryContent}" />
+		<var name="key_entryExternalLink" value="${entryExternalLink}" />
 		<var name="key_entrySubtitle" value="${entrySubtitle}" />
 		<var name="key_entryTitle" value="${entryTitle}" />
 		<var name="key_uploadFileName" value="${uploadFileName}" />
@@ -654,6 +670,17 @@
 			<isset var="entryContentItalics" />
 			<then>
 				<execute function="AssertTextEquals#assertPartialText" locator1="BlogsEntry#CONTENT_HTML_ITALICS" value1="${entryContentItalics}" />
+			</then>
+		</if>
+
+		<if>
+			<isset var="entryExternalLink" />
+			<then>
+				<execute function="AssertTextEquals#assertPartialText" locator1="BlogsEntry#EXTERNAL_LINK" value1="${entryExternalLink}" />
+
+				<execute function="AssertClick#assertTextClickAtNoJavaScript" locator1="BlogsEntry#EXTERNAL_LINK" value1="${entryExternalLink}" />
+
+				<execute function="AssertLocation" value1="${externalURL}/" />
 			</then>
 		</if>
 	</command>
