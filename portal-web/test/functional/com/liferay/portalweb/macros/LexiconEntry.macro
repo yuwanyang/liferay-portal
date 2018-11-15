@@ -185,6 +185,12 @@
 		</execute>
 	</command>
 
+	<command name="viewNoEntryMenu">
+		<execute function="AssertElementNotPresent" locator1="Icon#ROW_VERTICAL_ELLIPSIS">
+			<var name="key_rowEntry" value="${rowEntry}" />
+		</execute>
+	</command>
+
 	<command name="viewNoEntryMenuItem">
 		<execute macro="LexiconEntry#openEntryMenu">
 			<var name="rowEntry" value="${rowEntry}" />
