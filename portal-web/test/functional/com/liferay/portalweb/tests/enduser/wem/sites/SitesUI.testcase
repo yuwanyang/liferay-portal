@@ -119,5 +119,10 @@ definition {
 		);
 
 		Site.deleteCP(siteName = "Site Name");
+
+		AssertTextEquals(
+			locator1 = "Message#EMPTY_INFO",
+			value1 = "No sites were found."
+		);
 	}
 }

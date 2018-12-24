@@ -1189,6 +1189,11 @@ definition {
 		);
 
 		Site.deleteCP(siteName = "Organization Name");
+
+		AssertTextEquals(
+			locator1 = "Message#EMPTY_INFO",
+			value1 = "No sites were found."
+		);
 	}
 
 	@priority = "5"
