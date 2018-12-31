@@ -53,6 +53,8 @@ definition {
 			portlet = "Pages"
 		);
 
+		SitePages.togglePrivacy(privacy = "Pages");
+
 		LexiconEntry.gotoAdd();
 
 		if (contains("${sitePageType}", "{sitePageType}")) {
