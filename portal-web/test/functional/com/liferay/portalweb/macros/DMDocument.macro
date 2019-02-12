@@ -1831,6 +1831,34 @@ definition {
 		);
 	}
 
+	macro viewPDF {
+		var key_pageFooter = "${pageFooter}";
+
+		Pause(locator1 = "3000");
+
+		Click.clickNoMouseOver(locator1 = "Button#EXPAND");
+
+		AssertElementNotPresent(locator1 = "DocumentsAndMedia#IMAGE_CONTAINER_FIT");
+
+		AssertElementPresent(locator1 = "Button#PAGE_ABOVE_DISABLED");
+
+		if ("${pageFooter}" == "1 / 1") {
+			AssertElementPresent(locator1 = "Button#PAGE_FOOTER");
+
+			AssertElementPresent(locator1 = "Button#PAGE_BELOW_DISABLED");
+		}
+
+		else {
+			Click.clickNoMouseOver(locator1 = "Button#PAGE_BELOW");
+
+			AssertElementPresent(locator1 = "Button#PAGE_FOOTER");
+
+			Click.clickNoMouseOver(locator1 = "Button#PAGE_ABOVE");
+
+			AssertElementNotPresent(locator1 = "Button#PAGE_FOOTER");
+		}
+	}
+
 	macro viewPG {
 		var key_dmDocumentTitle = "${dmDocumentTitle}";
 		var key_dmDocumentType = "${dmDocumentType}";
