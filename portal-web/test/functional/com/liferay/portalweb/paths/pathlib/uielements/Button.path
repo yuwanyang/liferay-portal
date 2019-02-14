@@ -259,6 +259,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>EXPAND</td>
+	<td>//button[@title='expand']</td>
+	<td></td>
+</tr>
+<tr>
 	<td>EXPORT</td>
 	<td>//div[contains(@class,'footer')]//button[contains(.,'Export')]</td>
 	<td></td>
@@ -371,6 +376,31 @@
 <tr>
 	<td>OK</td>
 	<td>//button[contains(.,'OK')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PAGE_ABOVE</td>
+	<td>//button[@title='page-above']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PAGE_ABOVE_DISABLED</td>
+	<td>//button[(@disabled='disabled') and contains(@title,'page-above')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PAGE_BELOW</td>
+	<td>//button[@title='page-below']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PAGE_BELOW_DISABLED</td>
+	<td>//button[(@disabled='disabled') and contains(@title,'page-below')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PAGE_FOOTER</td>
+	<td>//button[contains(.,'page ${key_pageFooter}')]</td>
 	<td></td>
 </tr>
 <tr>
